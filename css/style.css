@@ -1,1 +1,865 @@
+:root {
+    --primary-color: #5D4037; /* Coklat Tua */
+    --secondary-color: #D7CCC8; /* Krem */
+    --accent-color: #FF9800; /* Oranye Emas */
+    --text-color: #333;
+    --light-text: #fff;
+    --background-color: #f4f1ea;
+    --card-background: #fff;
+    --border-color: #e0e0e0;
+    --shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --font-family: 'Poppins', sans-serif;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .logo h1 {
+    color: var(--accent-color);
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header ul li a:hover, header ul li a.active {
+    background-color: var(--accent-color);
+}
+
+/* Kasir Page */
+.kasir-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.produk-list, .pembayaran {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.produk-card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.produk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.produk-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.produk-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* Pembayaran Section */
+.pelanggan-section, .payment-section {
+    margin-bottom: 20px;
+}
+
+.pelanggan-section label, .payment-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.pelanggan-section select, .payment-section input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: var(--font-family);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cart-table th {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.cart-table tfoot td {
+    font-weight: bold;
+}
+
+.btn-hapus {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-bayar, .btn-batal {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-bayar {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+.btn-bayar:hover {
+    background-color: #F57C00;
+}
+
+.btn-batal {
+    background-color: #757575;
+    color: var(--light-text);
+}
+
+.btn-batal:hover {
+    background-color: #616161;
+}
+
+/* Nota Page */
+.nota-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.nota-header, .nota-footer {
+    text-align: center;
+}
+
+.nota-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.nota-info {
+    margin: 20px 0;
+}
+
+.nota-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.nota-table th, .nota-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.nota-table th {
+    border-bottom: 2px dashed var(--border-color);
+}
+
+.nota-table td {
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.nota-footer {
+    margin-top: 30px;
+}
+
+.btn-print, .btn-new {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-print {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.btn-new {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+/* Style untuk print */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    .nota-container {
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+    }
+    .btn-print, .btn-new {
+        display: none;
+    }
+    header, footer {
+        display: none;
+    }
+}
+/* Tambahkan di bagian bawah file css/style.css */
+
+/* Halaman Manajemen */
+.form-container, .table-container {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.form-manajemen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.form-manajemen .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-manajemen label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-manajemen input, .form-manajemen textarea, .form-manajemen select {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 1em;
+}
+
+.form-manajemen .btn-submit, .btn-batal {
+    grid-column: 1 / -1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.form-manajemen .btn-submit {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+.form-manajemen .btn-batal {
+    background-color: #757575;
+    color: var(--light-text);
+}
+
+/* Tabel Manajemen */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-container th, .table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-container th {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.table-container tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.aksi-column {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.aksi-column form {
+    margin: 0;
+}
+
+.btn-edit {
+    background-color: #2196F3; /* Blue */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.btn-edit:hover {
+    background-color: #0b7dda;
+}
+
+.btn-hapus {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.btn-hapus:hover {
+    background-color: #da190b;
+}
+
+/* Alert Box */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+/* ==========================
+   GAYA NOTA YANG LEBIH KEREN
+   ========================== */
+.nota-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.nota-container {
+    font-family: 'Courier Prime', monospace; /* Font seperti struk asli */
+    width: 100%;
+    max-width: 400px; /* Lebar seperti kertas struk */
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Header Nota */
+.nota-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nota-header .logo-area {
+    margin-bottom: 10px;
+}
+
+.nota-header .logo-area i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.nota-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.nota-header .tagline {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 15px 0;
+}
+
+.nota-header p {
+    margin: 5px 0;
+    font-size: 0.85rem;
+}
+
+.nota-header hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+/* Body Nota */
+.nota-body, .nota-footer {
+    font-size: 0.9rem;
+}
+
+.nota-info table, .nota-items table, .nota-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nota-info table td {
+    padding: 2px 0;
+}
+
+.nota-items thead th {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.nota-items tbody td {
+    padding: 8px 0;
+    vertical-align: top;
+}
+
+.nota-items tbody small {
+    color: #777;
+    font-size: 0.8em;
+}
+
+.nota-summary table td {
+    padding: 4px 0;
+}
+
+.nota-summary .grand-total td {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-top: 10px;
+    border-top: 2px solid var(--primary-color);
+}
+
+/* Footer Nota */
+.nota-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nota-footer .thank-you {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nota-footer .visit-again {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.nota-footer .social-info {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+hr.dashed {
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 15px 0;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Tombol Aksi */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.action-buttons .btn-print, .action-buttons .btn-new {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    border-radius: 50px; /* Tombol bulat */
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-buttons .btn-print {
+    background-color: var(--primary-color);
+}
+
+.action-buttons .btn-print:hover {
+    background-color: #4e342e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.action-buttons .btn-new {
+    background-color: var(--accent-color);
+}
+
+.action-buttons .btn-new:hover {
+    background-color: #F57C00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+/* ==========================
+   GAYA SAAT PRINT
+   ========================== */
+@media print {
+    body {
+        background-color: #fff;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nota-wrapper {
+        background-color: #fff;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .nota-container {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 20px;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Sembunyikan elemen yang tidak perlu */
+    .action-buttons {
+        display: none;
+    }
+
+    /* Pastikan teks tetap hitam untuk hemat tinta */
+    .nota-container, .nota-container * {
+        color: #000 !important;
+        -webkit-print-color-adjust: exact; /* Untuk mempertahankan warna latar jika perlu */
+        print-color-adjust: exact;
+    }
+    
+    /* Opsional: Atur margin kertas */
+    @page {
+        margin: 10mm;
+    }
+}
+/* ==========================
+   KONTROL QUANTITY BARU
+   ========================== */
+.qty-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-qty {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Membuat tombol bulat */
+    border: 1px solid var(--accent-color);
+    background-color: #fff;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* Untuk memastikan tanda +/- sejajar */
+}
+
+.btn-qty:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.qty-value {
+    font-weight: 500;
+    min-width: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+/* Tambahkan kode ini di dalam css/style.css */
+
+/* Mengatur kontainer logo agar menjadi flexbox */
+header .logo {
+    display: flex;
+    align-items: center; /* Menyelaraskan gambar dan teks secara vertikal di tengah */
+    gap: 12px; /* Memberi jarak antara logo dan teks */
+}
+
+/* Mengatur ukuran logo */
+header .logo img {
+    height: 85px; /* Atur tinggi logo sesuai kebutuhan */
+    width: auto;   /* Biarkan lebar menyesuaikan agar proporsional */
+}
+
+/* Menghilangkan margin default pada tag h1 agar sejajar */
+header .logo h1 {
+    margin: 0;
+    font-size: 1.5rem; /* Bisa disesuaikan jika perlu */
+    color: var(--accent-color);
+}
+/* ==========================
+   GAYA TABEL (untuk Manajemen & Riwayat)
+   ========================== */
+.table-container {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-container th, .table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-container th {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.table-container tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.aksi-column {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.aksi-column form {
+    margin: 0;
+}
+
+/* ==========================
+   GAYA TOMBOL (Jika belum ada)
+   ========================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+.btn-info:hover {
+    background-color: #138496;
+}
+/* ==========================
+   GAYA HALAMAN DASHBOARD
+   ========================== */
+
+/* Container untuk kartu ringkasan */
+.dashboard-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Gaya untuk setiap kartu ringkasan */
+.summary-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+}
+
+.summary-card .card-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-card .card-icon i {
+    font-size: 2rem;
+}
+
+.summary-card .card-info {
+    flex-grow: 1;
+}
+
+.summary-card .card-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.summary-card .card-value {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Gaya untuk bagian transaksi terbaru */
+.dashboard-latest h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* Pastikan tombol di dalam tabel dashboard juga rapi */
+.dashboard-latest .aksi-column {
+    justify-content: center;
+}
